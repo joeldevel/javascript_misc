@@ -1,3 +1,10 @@
+:root {
+  --btn-a-bg: red;
+  --btn-b-bg: green;
+  --btn-move: lightgrey;
+  --device-bg: dodgerblue;
+  --screen-bg: lightblue;
+}
 body {
   margin: 0;
   padding: 0;
@@ -8,29 +15,38 @@ body {
   /* border: 10px solid red; */
   height: 100vh;
   display: grid;
+  padding: 0;
+  background: var(--device-bg);
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 80% 20%;
   grid-template-areas:
                       "screen screen"
-                      "btn-action btn-movement";
+                      "btn-movement btn-action ";
 }
 .game-screen {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
+  border-left: 2px solid white;
+  border-bottom: 1px solid white;
   grid-area: screen;
-  background: lightblue;
+  background: var(--screen-bg);
   margin: 10px 10px;
   border-radius: 10px;
-  /* display: flex; */
+  display: flex;
   /* justify-content: center; */
   /* align-items: center; */
 }
 .buttons-container {
   display: grid;
-  margin: 10 px;
+  padding: 2px;
+  margin: 2px;
 }
 .buttons-container-action{
   grid-area: btn-action;
-  border: 2px solid red;
+  border: 2px solid white;
+  border-top-right-radius: 10%;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
   padding:10px 20px;
   display: grid;
   grid-template-columns:  repeat(3, 1fr) ;
@@ -42,7 +58,7 @@ body {
 }
 .buttons-container-movement{
   grid-area: btn-movement;
-  border: 2px solid red;
+  border: 2px solid black;
   border-top-left-radius: 50%;
   border-top-right-radius: 10%;
   border-bottom-right-radius: 50%;
@@ -56,31 +72,38 @@ body {
           ". down .";
 }
 .btn {
-  /* min-width: 100px; */
+  text-align: center;
   max-width: 100px;
   max-height: 100px;
   display: inline-grid;
   background: grey;
   border-radius: 50%;
-  /* border: 10px solid black; */
+  /* border: 2px solid black; */
+  box-shadow: 1px 3px 2px rgba(0,0,0,0.5);
 }
 .btn-A {
   grid-area: A;
+  background: var(--btn-a-bg);
 }
 .btn-B {
   grid-area: B;
+  background: var(--btn-b-bg);
 }
 .btn-up {
   grid-area: up;
+  background: var(--btn-move);
 }
 .btn-left {
   grid-area: left;
+  background: var(--btn-move);
 }
 .btn-right {
   grid-area: right;
+  background: var(--btn-move);
 }
 .btn-down {
   grid-area: down;
+  background: var(--btn-move);
 }
 .btn-active {
   background: red;
@@ -96,9 +119,9 @@ body {
   position: absolute;
   top: 200px;
   left: 200px;
-  /* bottom: 50%;
-  right: 50%; */
-  /* margin: 0 auto; */
+  border-radius: 50%;
+  border: 2px solid black;
+  opacity: 0.8;
 }
 /* this are for modify element  when clicking  action buttons */
 .main-action-effect {
@@ -107,15 +130,22 @@ body {
 .secondary-action-effect {
   background: green;
 }
-/* .move-up {
-  top: 180px;
+@media (min-width:450px) {
+  .game-device {
+    border: 10px solid black;
+    max-height: 95vh;
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid;
+
+  }
+  .test-action {
+    top: 40vh;
+    left: 45vw;
+  }
+  .game-device {
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
-.move-down {
-  top: 220px;
-}
-.move-right {
-  left: 220px;
-}
-.move-left {
-  left: 180px;
-} */

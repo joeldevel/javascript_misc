@@ -3,7 +3,7 @@
 // l  u  r  d  'a' 's'
 const testAction = document.getElementById('action-placeholder');
 // desktop
-window.addEventListener('keyup', function (event){
+window.addEventListener('keydown', function (event){
   console.log(event.keyCode);
   let key = ''
   switch (event.keyCode) {
