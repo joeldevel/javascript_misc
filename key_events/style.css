@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*  game-device emulates a portable game console*/
+.game-device {
+  /* border: 10px solid red; */
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 80% 20%;
+  grid-template-areas:
+                      "screen screen"
+                      "btn-action btn-movement";
+}
+.game-screen {
+  border: 1px solid blue;
+  grid-area: screen;
+  background: lightblue;
+  margin: 10px 10px;
+  border-radius: 10px;
+}
+.buttons-container {
+  display: grid;
+  margin: 10 px;
+}
+.buttons-container-action{
+  grid-area: btn-action;
+  border: 2px solid red;
+  padding:10px 20px;
+  display: grid;
+  grid-template-columns:  repeat(3, 1fr) ;
+  grid-template-rows: repeat(3, 1fr) ;
+  grid-template-areas:
+          " A . . "
+          " . . ."
+          " . B .";
+}
+.buttons-container-movement{
+  grid-area: btn-movement;
+  border: 2px solid red;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 10%;
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  grid-template-rows:  repeat(1fr);
+  grid-template-areas:
+          ". up ."
+          "left center right"
+          ". down .";
+}
+.btn {
+  /* min-width: 100px; */
+  max-width: 100px;
+  max-height: 100px;
+  display: inline-grid;
+  background: grey;
+  border-radius: 50%;
+  /* border: 10px solid black; */
+}
+.btn-A {
+  grid-area: A;
+}
+.btn-B {
+  grid-area: B;
+}
+.btn-up {
+  grid-area: up;
+}
+.btn-left {
+  grid-area: left;
+}
+.btn-right {
+  grid-area: right;
+}
+.btn-down {
+  grid-area: down;
+}
+.btn-active {
+  background: red;
+}
