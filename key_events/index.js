@@ -57,18 +57,17 @@ buttons.forEach( btn => {
       // console.log( 'A moevemnt btn');
       switch (btn.id) {
         case 'up':
-        // testAction.classList.add('move-up');
-           testAction.style.top = (parseInt(getOffset(testAction).top) -10) + 'px';
-           break;
+            moveElementVertically( testAction, 10, 'up');
+            break;
         case 'down':
-           testAction.style.top = (parseInt(getOffset(testAction).top) + 10) + 'px';
-           break;
+            moveElementVertically( testAction, 10, 'down');
+            break;
         case 'left':
-           testAction.style.left = (parseInt(getOffset(testAction).left) - 10) + 'px';
-          break;
+            moveElementHorizontally( testAction, 10, 'left');
+            break;
         case 'right':
-           testAction.style.left = (parseInt(getOffset(testAction).left) + 10) + 'px';
-          break;
+            moveElementHorizontally( testAction, 10, 'right');
+            break;
         default: break;
       }
     }
@@ -91,3 +90,29 @@ function getOffset(el) {
   }
 }
 // console.log( getOffset(testAction).top);
+// function moveElement( element, stepX, stepY) {
+//
+// }
+
+function moveElementVertically ( element, step, direction ) {
+  switch (direction) {
+    case 'up':
+      element.style.top = (parseInt(getOffset(element).top)  - parseInt(step) ) + 'px';
+      break;
+    case 'down':
+      element.style.top = (parseInt(getOffset(element).top)  + parseInt(step)) + 'px';
+      break;
+    default: break;
+  }
+}
+function moveElementHorizontally ( element, step, direction ) {
+  switch (direction) {
+    case 'left':
+      element.style.left = (parseInt(getOffset(element).left)  - parseInt(step) ) + 'px';
+      break;
+    case 'right':
+      element.style.left = (parseInt(getOffset(element).left)  + parseInt(step)) + 'px';
+      break;
+    default: break;
+  }
+}
