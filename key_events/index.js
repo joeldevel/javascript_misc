@@ -2,7 +2,7 @@
 // 37 38 39 40  65  83
 // l  u  r  d  'a' 's'
 const testAction = document.querySelector('#action-placeholder');
-
+// desktop
 window.addEventListener('keyup', function (event){
   console.log(event.keyCode);
   let key = ''
@@ -28,3 +28,12 @@ window.addEventListener('keyup', function (event){
   document.getElementById(key).classList.add('btn-active');
   // console.log( key);
 })
+
+// mobile
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach( btn => {
+  btn.addEventListener( 'click', function( event ) {
+    console.log( testAction.innerHTML = this.textContent );
+    } )
+}
+)
