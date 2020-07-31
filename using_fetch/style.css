@@ -1,0 +1,29 @@
+:root {
+  --clr-main: red;
+  --clr-second: dodgerblue;
+  --clr-accent: orangered;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  padding: 10px;
+}
+.container-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.post {
+  border: 1px solid  var(--clr-accent);
+  border-radius: 10px;
+}
+.post-title {
+  color: var(--clr-main);
+}
+.post-body {
+  color: var(--clr-second);
+}
